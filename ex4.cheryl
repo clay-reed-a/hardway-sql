@@ -1,0 +1,61 @@
+CREATE TABLE person (
+	id INTEGER PRIMARY KEY,
+	first_name TEXT,
+	last_name TEXT,
+	age INTEGER
+);
+
+CREATE TABLE inventory (
+	id INTEGER PRIMARY KEY,
+	name TEXT,
+	location TEXT,
+	price INTEGER,
+	acquisition TEXT
+);
+
+CREATE TABLE book (
+	id INTEGER PRIMARY KEY,
+	name TEXT,
+	location TEXT,
+	price INTEGER,
+	acquisition TEXT,
+	author TEXT,
+	started TEXT,
+	ended TEXT
+	rating INTEGER
+);
+
+CREATE TABLE person_inventory (
+	person_id INTEGER,
+	inventory_id INTEGER
+);
+
+CREATE TABLE person_book (
+	person_id INTEGER,
+	book_id INTEGER
+);
+
+
+INSERT INTO person (id, first_name, last_name, age)
+	VALUES (0, "Cheryl", "Wu", 21);
+
+INSERT INTO person (id, first_name, last_name, age)
+	VALUES (1, "Clayton", "Albachten", 26);
+
+INSERT INTO inventory (id, name, location, price, acquisition)
+	VALUES (10, "Clayton desk", "Main room", 80, "Muji");
+
+INSERT INTO inventory (id, name, location, price, acquisition)
+	VALUES (11, "Plants desk", "Main room", 125, "Crate and Barrel");
+
+INSERT INTO book (id, name, location, price, acquisition, author, started)
+	VALUES (20, "Small is Beautiful", "Plants desk", 5, "Amazon", "Schumacher", "8/2014");
+
+INSERT INTO book (id, name, location, price, acquisition, author)
+	VALUES (21, "CSS Mastery", "Clayton desk", 12, "Amazon", "Andy Budd");
+
+INSERT INTO person_book (person_id, book_id)
+	VALUES (0,20);
+
+INSERT INTO person_book (person_id, book_id)
+	VALUES (1, 21);
