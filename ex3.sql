@@ -26,3 +26,11 @@ INSERT INTO pet (id, name, breed, age, dead, person_id)
 -- "sqlite thought the table was too small." 
 -- Even went in & looked at .schema
 -- Stupid! 
+
+INSERT INTO pet VALUES (1, "Heiress", "Cat", 40, 0, 0); 
+
+-- Zed says about this line 30 "...relies 
+-- on the implicit order in the table.
+-- It's dangerous, as db columns do not necessarily 
+-- have reliable ordering, and you aren't always sure 
+-- what the statement is accessing." 
