@@ -1,3 +1,7 @@
+-- relations --
+
+CREATE TABLE person_pet (person_id INTEGER, pet_id INTEGER);
+
 CREATE TABLE person (
 	id INTEGER PRIMARY KEY, 
 	first_name TEXT, 
@@ -13,9 +17,6 @@ CREATE TABLE pet (
 	dead INTEGER  
 );
 
--- relations --
-
-CREATE TABLE person_pet (
-	person_id INTEGER, 
-	pet_id INTEGER
-);
+/* curiously, entering the .schema command 
+inside the sqlite shell 
+shows fairly well the exact contents of this file */
