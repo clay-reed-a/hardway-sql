@@ -1,7 +1,5 @@
 -- relations --
 
-CREATE TABLE person_pet (person_id INTEGER, pet_id INTEGER);
-
 CREATE TABLE person (
 	id INTEGER PRIMARY KEY, 
 	first_name TEXT, 
@@ -14,9 +12,19 @@ CREATE TABLE pet (
 	name TEXT, 
 	breed TEXT, 
 	age INTEGER, 
-	dead INTEGER  
+	dead INTEGER, 
+	person_id INTEGER -- foreign key, cat lady has many cats   
 );
 
-/* curiously, entering the .schema command 
-inside the sqlite shell 
-shows fairly well the exact contents of this file */
+CREATE TABLE car (
+	id INTEGER PRIMARY KEY, 
+	make TEXT, 
+	model TEXT, 
+	color TEXT, 
+	person_id INTEGER -- foreign key, bastard has many cars 
+);
+
+-- weirdly, .schema in sqlite shell  
+-- shows fairly well just 
+-- the exact contents of this file 
+-- newlines & all 
