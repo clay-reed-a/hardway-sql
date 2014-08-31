@@ -26,5 +26,5 @@ CREATE TABLE car (
 
 -- weirdly, .schema in sqlite shell  
 -- shows fairly well just 
--- the exact contents of this file 
--- newlines & all 
+-- the exact contents of this file, 
+-- newlines & all.
