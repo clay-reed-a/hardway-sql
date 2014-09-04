@@ -16,7 +16,7 @@ CREATE TABLE pet (
 );
 
 -- a seperate relationship table 
--- allows for multiple owners
+-- allows for multiple owners of a pet 
 
 CREATE TABLE person_pet ( 
 	person_id INTEGER,
