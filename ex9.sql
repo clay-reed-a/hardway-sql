@@ -111,3 +111,17 @@ UPDATE person SET first_name = "Zed"
   WHERE id = 2; 
 
 SELECT * FROM person; 
+
+-- Wherein The Names of Dead Pets Are Destroyed 
+
+SELECT * FROM pet;
+
+UPDATE pet SET name = "DEAD"
+  WHERE dead = 1;
+
+SELECT * FROM pet; 
+
+-- NOTE: sqlite3 has trouble making a distinction 
+-- between the string "DEAD" & the column 
+-- called dead, mysql did not have this problem 
+
