@@ -1,8 +1,8 @@
 /* reset db */
 
--- DROP TABLE person;
--- DROP TABLE pet;
--- DROP TABLE person_pet; 
+DROP TABLE person;
+DROP TABLE pet;
+DROP TABLE person_pet; 
 
 /* Schema */
 
@@ -103,5 +103,11 @@ UPDATE pet SET name = "Fancy Pants"
 
 SELECT * FROM pet; 
 
+-- Argue Zed Not Actually Hilarious 
 
+SELECT * FROM person;
 
+UPDATE person SET first_name = "Zed"
+  WHERE id = 2; 
+
+SELECT * FROM person; 
