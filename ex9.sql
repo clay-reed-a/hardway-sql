@@ -125,3 +125,11 @@ SELECT * FROM pet;
 -- between the string "DEAD" & the column 
 -- called dead, mysql did not have this problem 
 
+-- Wherein All Records of Dead Pets Are Destroyed 
+
+SELECT * FROM pet; 
+
+DELETE FROM pet 
+  WHERE dead = 1; 
+
+SELECT * FROM pet; 
