@@ -1,8 +1,8 @@
 /* reset db */
 
-DROP TABLE person;
-DROP TABLE pet;
-DROP TABLE person_pet; 
+-- DROP TABLE person;
+-- DROP TABLE pet;
+-- DROP TABLE person_pet; 
 
 /* Schema */
 
@@ -84,52 +84,14 @@ INSERT INTO person_pet (person_id, pet_id)
 INSERT INTO person_pet (person_id, pet_id) 
   VALUES (2, 4); 
 
-
--- Make Zed Hilarious
-
-SELECT * FROM person; 
-
-UPDATE person SET first_name = "Hilarious Guy"
-  WHERE first_name = "Zed";
-
-SELECT * FROM person; 
-
--- Baptize the Bee 
+-- All Zed's Pets Are Named Zed's Pet --
 
 SELECT * FROM pet; 
 
-UPDATE pet SET name = "Fancy Pants"
-  WHERE id = 0;
-
-SELECT * FROM pet; 
-
--- Argue Zed Not Actually Hilarious 
-
-SELECT * FROM person;
-
-UPDATE person SET first_name = "Zed"
-  WHERE id = 2; 
-
-SELECT * FROM person; 
-
--- Wherein The Names of Dead Pets Are Destroyed 
-
-SELECT * FROM pet;
-
-UPDATE pet SET name = "DEAD"
-  WHERE dead = 1;
-
-SELECT * FROM pet; 
-
--- NOTE: sqlite3 has trouble making a distinction 
--- between the string "DEAD" & the column 
--- called dead, mysql did not have this problem 
-
--- Wherein All Records of Dead Pets Are Destroyed 
-
-SELECT * FROM pet; 
-
-DELETE FROM pet 
-  WHERE dead = 1; 
+UPDATE pet SET name = "Zed's Pet"
+  WHERE id IN (
+    SELECT person_pet.pet_id FROM person_pet 
+    WHERE person_id = 2 
+);
 
 SELECT * FROM pet; 
