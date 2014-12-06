@@ -1,8 +1,8 @@
 /* reset db */
 
--- DROP TABLE person;
--- DROP TABLE pet;
--- DROP TABLE person_pet; 
+DROP TABLE person;
+DROP TABLE pet;
+DROP TABLE person_pet; 
 
 /* Schema */
 
@@ -84,14 +84,15 @@ INSERT INTO person_pet (person_id, pet_id)
 INSERT INTO person_pet (person_id, pet_id) 
   VALUES (2, 4); 
 
--- All Zed's Pets Are Named Zed's Pet --
+-- Don't talk about Gigantor in front of Zed --
 
 SELECT * FROM pet; 
 
-UPDATE pet SET name = "Zed's Pet"
+UPDATE pet SET name = "Zed's Dead Pet"
   WHERE id IN (
     SELECT person_pet.pet_id FROM person_pet 
     WHERE person_id = 2 
-);
+) AND 
+  dead = 1;
 
 SELECT * FROM pet; 
