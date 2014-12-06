@@ -106,3 +106,17 @@ DELETE FROM person_pet
 
 SELECT * FROM person_pet; 
 
+/* Delete People Whose Pets Are Dead */
+
+SELECT first_name, last_name FROM person; 
+
+DELETE FROM person 
+  WHERE id IN (
+    SELECT person_pet.person_id 
+    FROM person_pet, pet 
+    WHERE
+    pet.dead = 1 AND 
+    pet.id = person_pet.pet_id 
+    );
+
+SELECT first_name, last_name FROM person; 
