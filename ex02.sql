@@ -1,10 +1,16 @@
--- relations --
+/* relations */
 
-CREATE TABLE person (
+-- In the real world, a cat can be stray & 
+-- a car can be sitting by the side of the road but 
+-- in SQLand...   
+
+CREATE TABLE person ( 
 	id INTEGER PRIMARY KEY, 
 	first_name TEXT, 
 	last_name TEXT, 
 	age INTEGER 
+	-- no foreign key, a person owns everything & 
+	-- nothing owns a person -- 
 );
 
 CREATE TABLE pet (
@@ -24,7 +30,7 @@ CREATE TABLE car (
 	person_id INTEGER -- foreign key, bastard has many cars 
 );
 
--- weirdly, .schema in sqlite shell  
+-- NOTE TO SELF: weirdly, .schema in sqlite shell  
 -- shows fairly well just 
 -- the exact contents of this file, 
 -- newlines & all.
