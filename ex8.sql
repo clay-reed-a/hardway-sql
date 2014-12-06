@@ -87,11 +87,12 @@ INSERT INTO person_pet (person_id, pet_id)
 /* Delete Zed's pets */
 
 DELETE FROM pet WHERE id IN (
-  SELECT person_pet.pet_id 
-  FROM person_pet, person
+  SELECT pet.id 
+  FROM person_pet, person, pet 
   WHERE 
   person.id = person_pet.person_id AND 
-  person.id = 2  
+  person.id = 2 and 
+  pet.id = person_pet.pet_id 
 );
 
 SELECT * FROM pet;
